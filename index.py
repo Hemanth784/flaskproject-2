@@ -10,6 +10,8 @@ db = client.get_database('total_records')
 register=db.register
 
 
+
+
 @app.route('/')
 def home():
     return render_template("signup.html")
@@ -24,7 +26,7 @@ def login():
         register.insert_one({"email":email,"password":password})
         return render_template("success.html")
     else:
-        return render_template("error.html")
+        return render_template("Travel_Information.html")
 
 def validate_password(password):
     l, u, p, d = 0, 0, 0, 0
